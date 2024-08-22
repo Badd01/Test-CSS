@@ -1,45 +1,72 @@
 * {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* hero */
 .hero,
 footer {
   background-color: #1f2937;
 }
 
-.hero-text {
+.hero-main-text {
   font-size: 48px;
   font-weight: bolder;
   color: #f9faf8;
 }
 
-.header-logo {
-  font-size: 24px;
-  color: #f9faf8;
-}
-
 .hero-secondary-text,
-.hero-link-text {
+.header-link-item {
   font-size: 18px;
   color: #e5e7eb;
 }
 
+.header-logo {
+  font-size: 24px;
+  color: #f9faf8;
+  cursor: pointer;
+}
+
 button {
   background-color: #3882f6;
+  color: white;
+  font-size: 18px;
+  border-radius: 7px;
+  padding: 5px 30px;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
-.information-header-text {
-  font-size: 36px;
-  font-weight: bolder;
-  color: #1f2937;
+.header-container,
+.hero-container {
+  width: 60%;
+  margin: auto;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
 }
 
-.quote-background {
-  background-color: #e5e7eb;
+.hero-container {
+  padding: 100px 25px;
 }
-.quote-text {
-  font-size: 36px;
-  font-weight: lighter;
-  font-style: italic;
-  color: #1f2937;
+
+.header-link {
+  gap: 20px;
+  display: flex;
+}
+
+.hero-container div {
+  align-content: center;
+}
+
+.hero-text {
+  width: 50%;
+}
+
+.image {
+  width: 600px;
+  height: 300px;
+}
+a {
+  text-decoration: none;
 }
