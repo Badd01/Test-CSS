@@ -98,4 +98,25 @@ a {
 
 .information-item {
   width: 200px;
+  text-align: center;
+}
+/* quote */
+.quote {
+  background-color: #e5e7eb;
+}
+.quote-container {
+  width: 50%;
+  margin: auto;
+  padding: 50px 25px;
+}
+.quote-text {
+  font-size: 36px;
+  font-weight: 100;
+  font-style: italic;
+}
+.quote-author {
+  font-weight: bolder;
+  font-size: 24px;
+  text-align: end;
+  padding: 25px;
 }
