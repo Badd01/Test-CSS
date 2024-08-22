@@ -151,3 +151,9 @@ a {
   font-size: 18px;
   align-content: center;
 }
+/* footer */
+footer {
+  text-align: center;
+  color: #f9faf8;
+  padding: 50px;
+}
