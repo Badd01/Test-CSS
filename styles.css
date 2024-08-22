@@ -40,10 +40,12 @@ button {
 .hero-container {
   width: 60%;
   margin: auto;
-  padding: 25px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
+}
+
+.header-container {
+  padding: 25px;
 }
 
 .hero-container {
@@ -69,4 +71,31 @@ button {
 }
 a {
   text-decoration: none;
+}
+
+/* information */
+.information-container {
+  width: 60%;
+  margin: auto;
+  padding: 50px 25px;
+}
+.information-header-text {
+  font-size: 36px;
+  font-weight: bolder;
+  color: #1f2937;
+  text-align: center;
+  padding: 0px 25px 25px 25px;
+}
+.information-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.information-img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.information-item {
+  width: 200px;
 }
