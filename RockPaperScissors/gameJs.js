@@ -8,19 +8,19 @@ const getComputerChoice = () => {
 function playRound(humanChoice, computerChoice) {
   let x = humanChoice.toLowerCase();
   let y = computerChoice;
-
-  if (x != "paper" && x != "rock" && x != "scissors") {
-    alert("Again");
-  }
+  const status = document.querySelector("#status");
   if (
     (x == "paper" && y == "rock") ||
     (x == "rock" && y == "scissors") ||
     (x == "scissors" && y == "paper")
   ) {
+    status.textContent = "You Win";
     return "Win";
   } else if (x == y) {
+    status.textContent = "You Draw";
     return "Draw";
   } else {
+    status.textContent = "You Lose";
     return "Lose";
   }
 }
@@ -28,16 +28,13 @@ function playRound(humanChoice, computerChoice) {
 const playGame = (playRound, humanScore, computerScore) => {
   if (playRound == "Win") {
     humanScore++;
-    console.log("Your Score:" + humanScore, "Computer Score: " + computerScore);
     return [humanScore, computerScore];
   }
   if (playRound == "Lose") {
     computerScore++;
-    console.log("Your Score:" + humanScore, "Computer Score: " + computerScore);
     return [humanScore, computerScore];
   }
   if (playRound == "Draw") {
-    console.log("Your Score:" + humanScore, "Computer Score: " + computerScore);
     return [humanScore, computerScore];
   }
 };
@@ -46,6 +43,8 @@ let humanScore = 0;
 let computerScore = 0;
 
 const getHumanChoice = (humanSelection) => {
+  const result = document.querySelector("#result");
+  const status = document.querySelector("#status");
   if (round < 5) {
     const computerSelection = getComputerChoice();
     const playResult = playRound(humanSelection, computerSelection);
@@ -54,11 +53,16 @@ const getHumanChoice = (humanSelection) => {
       humanScore,
       computerScore
     );
+    result.textContent = `You: ${humanScore} - Computer: ${computerScore}`;
     round++;
   } else {
-    document.querySelector(
-      "#result"
-    ).textContent = `Result: You${humanScore} - Computer${computerScore}`;
+    if (humanScore > computerScore) {
+      status.textContent = `Final! You Win`;
+    } else if (humanScore < computerScore) {
+      status.textContent = `Final! You Lose`;
+    } else {
+      status.textContent = `Final! You Draw`;
+    }
   }
 };
 document.querySelector("#rock").addEventListener("click", () => {
