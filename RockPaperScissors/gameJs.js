@@ -1,60 +1,76 @@
-let humanScore = 0;
-let computerScore = 0;
-let round = 0;
-
 const getComputerChoice = () => {
-  const choices = ["rock", "paper", "scissors"];
-  return choices[Math.floor(Math.random() * 3)];
+  let x = Math.floor(Math.random() * 3);
+  if (x == 0) return "rock";
+  if (x == 1) return "paper";
+  if (x == 2) return "scissors";
 };
 
-const playRound = (humanChoice, computerChoice) => {
-  const x = humanChoice.toLowerCase();
-  const y = computerChoice;
-
-  if (x === y) {
-    return "Draw";
-  } else if (
-    (x === "paper" && y === "rock") ||
-    (x === "rock" && y === "scissors") ||
-    (x === "scissors" && y === "paper")
+function playRound(humanChoice, computerChoice) {
+  let x = humanChoice.toLowerCase();
+  let y = computerChoice;
+  const status = document.querySelector("#status");
+  if (
+    (x == "paper" && y == "rock") ||
+    (x == "rock" && y == "scissors") ||
+    (x == "scissors" && y == "paper")
   ) {
+    status.textContent = "You Win";
     return "Win";
+  } else if (x == y) {
+    status.textContent = "You Draw";
+    return "Draw";
   } else {
+    status.textContent = "You Lose";
     return "Lose";
   }
-};
+}
 
-const updateScore = (result) => {
-  if (result === "Win") {
+const playGame = (playRound, humanScore, computerScore) => {
+  if (playRound == "Win") {
     humanScore++;
-  } else if (result === "Lose") {
+    return [humanScore, computerScore];
+  }
+  if (playRound == "Lose") {
     computerScore++;
+    return [humanScore, computerScore];
   }
-  document.getElementById("result").innerText = `Round: ${
-    round + 1
-  }, Result: ${result}, Your Score: ${humanScore}, Computer Score: ${computerScore}`;
+  if (playRound == "Draw") {
+    return [humanScore, computerScore];
+  }
 };
+let round = 0;
+let humanScore = 0;
+let computerScore = 0;
 
-const handleClick = (choice) => {
+const getHumanChoice = (humanSelection) => {
+  const result = document.querySelector("#result");
+  const status = document.querySelector("#status");
   if (round < 5) {
-    const computerChoice = getComputerChoice();
-    const result = playRound(choice, computerChoice);
-    updateScore(result);
+    const computerSelection = getComputerChoice();
+    const playResult = playRound(humanSelection, computerSelection);
+    [humanScore, computerScore] = playGame(
+      playResult,
+      humanScore,
+      computerScore
+    );
+    result.textContent = `You: ${humanScore} - Computer: ${computerScore}`;
     round++;
-  }
-  if (round == 5) {
-    document.querySelector(
-      "#result"
-    ).textContent = `Game Over! Final Score - You: ${humanScore}, Computer: ${computerScore}`;
+  } else {
+    if (humanScore > computerScore) {
+      status.textContent = `Final! You Win`;
+    } else if (humanScore < computerScore) {
+      status.textContent = `Final! You Lose`;
+    } else {
+      status.textContent = `Final! You Draw`;
+    }
   }
 };
-
-document
-  .querySelector("#rock")
-  .addEventListener("click", () => handleClick("rock"));
-document
-  .querySelector("#paper")
-  .addEventListener("click", () => handleClick("paper"));
-document
-  .querySelector("#scissors")
-  .addEventListener("click", () => handleClick("scissors"));
+document.querySelector("#rock").addEventListener("click", () => {
+  getHumanChoice("rock");
+});
+document.querySelector("#paper").addEventListener("click", () => {
+  getHumanChoice("paper");
+});
+document.querySelector("#scissors").addEventListener("click", () => {
+  getHumanChoice("scissors");
+});
