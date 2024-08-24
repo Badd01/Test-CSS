@@ -5,12 +5,6 @@ const getComputerChoice = () => {
   if (x == 2) return "scissors";
 };
 
-const getHumanChoice = () => {
-  let x = prompt("Your choice");
-
-  return x;
-};
-
 function playRound(humanChoice, computerChoice) {
   let x = humanChoice.toLowerCase();
   let y = computerChoice;
@@ -23,17 +17,10 @@ function playRound(humanChoice, computerChoice) {
     (x == "rock" && y == "scissors") ||
     (x == "scissors" && y == "paper")
   ) {
-    console.log("You Win");
     return "Win";
-  } else if (
-    (x == "paper" && y == "paper") ||
-    (x == "rock" && y == "rock") ||
-    (x == "scissors" && y == "scissors")
-  ) {
-    console.log("You Draw");
+  } else if (x == y) {
     return "Draw";
   } else {
-    console.log("You Lose");
     return "Lose";
   }
 }
@@ -54,14 +41,32 @@ const playGame = (playRound, humanScore, computerScore) => {
     return [humanScore, computerScore];
   }
 };
-const round = 5;
+let round = 0;
 let humanScore = 0;
 let computerScore = 0;
-for (let i = 0; i < round; i++) {
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-  console.log("Your Choice: " + humanSelection);
-  console.log("Computer Choice: " + computerSelection);
-  const playResult = playRound(humanSelection, computerSelection);
-  [humanScore, computerScore] = playGame(playResult, humanScore, computerScore);
-}
+
+const getHumanChoice = (humanSelection) => {
+  if (round < 5) {
+    const computerSelection = getComputerChoice();
+    const playResult = playRound(humanSelection, computerSelection);
+    [humanScore, computerScore] = playGame(
+      playResult,
+      humanScore,
+      computerScore
+    );
+    round++;
+  } else {
+    document.querySelector(
+      "#result"
+    ).textContent = `Result: You${humanScore} - Computer${computerScore}`;
+  }
+};
+document.querySelector("#rock").addEventListener("click", () => {
+  getHumanChoice("rock");
+});
+document.querySelector("#paper").addEventListener("click", () => {
+  getHumanChoice("paper");
+});
+document.querySelector("#scissors").addEventListener("click", () => {
+  getHumanChoice("scissors");
+});
