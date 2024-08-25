@@ -26,6 +26,7 @@ const numberSquare = () => {
     alert("Errors");
     return numberSquare();
   }
+  container.innerHTML = "";
   for (let i = 0; i < x; i++) {
     a[i] = document.createElement("div");
     a[i].classList.add("row");
