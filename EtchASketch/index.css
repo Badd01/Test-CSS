@@ -1,20 +1,17 @@
 .container {
   text-align: center;
   width: 960px;
-  border: 1px solid red;
   margin: auto;
 }
 .item {
   background-color: aqua;
   border: 1px solid;
 }
+
 .row {
   margin: auto;
   display: flex;
   justify-content: center;
-}
-.item:hover {
-  background-color: red;
 }
 #select {
   background-color: blue;
