@@ -1,0 +1,41 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+.container {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  border: solid black;
+}
+.display {
+  width: 400px;
+  height: 100px;
+  margin: 15px auto;
+  background-color: aqua;
+  padding: 10px;
+  align-content: center;
+}
+.numbers,
+.operate {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 10px 10px 10px;
+  flex-wrap: wrap;
+}
+.btn-number,
+.btn-operate {
+  width: 80px;
+  height: 80px;
+  flex: auto;
+}
+.calculator {
+  display: flex;
+}
+.numbers {
+  width: 60%;
+}
+.operate {
+  width: 40%;
+}
