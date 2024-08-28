@@ -12,10 +12,19 @@
 .display {
   height: 150px;
   background-color: aqua;
-  align-content: center;
   border-radius: 9px;
+  display: flex;
+  flex-direction: column;
 }
-
+.operator {
+  font-size: 32px;
+}
+.content {
+  text-align: end;
+  font-size: 64px;
+  align-content: end;
+  flex: 1;
+}
 .calculator {
   display: flex;
   justify-content: center;
@@ -32,7 +41,7 @@
   color: black;
 }
 
-.operator {
+.btn-operator {
   background-color: skyblue;
 }
 
