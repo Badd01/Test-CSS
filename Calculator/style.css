@@ -4,39 +4,25 @@
 }
 .container {
   width: 500px;
-  height: 500px;
+  height: 700px;
   margin: auto;
   border: solid black;
 }
 .display {
-  width: 400px;
-  height: 100px;
-  margin: 15px auto;
+  height: 150px;
   background-color: aqua;
-  padding: 10px;
   align-content: center;
 }
-.numbers,
-.operate {
+
+.calculator {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 30px 10px 10px 10px;
+  padding: 5px;
   flex-wrap: wrap;
 }
-.btn,
-.btn-equal,
-.btn-clear {
-  width: 80px;
-  height: 80px;
+.btn {
+  width: 100px;
+  height: 100px;
   flex: auto;
-}
-.calculator {
-  display: flex;
-}
-.numbers {
-  width: 60%;
-}
-.operate {
-  width: 40%;
 }
