@@ -16,14 +16,19 @@
   display: flex;
   flex-direction: column;
 }
-.operator {
+
+.expression {
   font-size: 32px;
+}
+.operator {
+  font-size: 24px;
+  text-align: end;
 }
 .content {
   text-align: end;
   font-size: 64px;
-  align-content: end;
   flex: 1;
+  align-content: end;
 }
 .calculator {
   display: flex;
@@ -32,19 +37,31 @@
   padding: 5px;
   flex-wrap: wrap;
 }
-.btn {
+.btn-number,
+.btn,
+.btn-operator {
   width: 100px;
   height: 100px;
   flex: auto;
-  background-color: white;
   border-radius: 9px;
   color: black;
 }
-
+.btn {
+  background-color: #76d7c4;
+}
 .btn-operator {
-  background-color: skyblue;
+  background-color: #85c1e9;
+}
+.btn-number {
+  background-color: #f4f6f7;
+}
+.btn:hover {
+  background-color: #1abc9c;
+}
+.btn-number:hover {
+  background-color: #d0d3d4;
 }
 
-.btn:hover {
-  background-color: aqua;
+.btn-operator:hover {
+  background-color: #3498db;
 }
