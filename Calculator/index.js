@@ -85,15 +85,18 @@ const buttonOperator = document.querySelectorAll(".btn-operator");
 buttonOperator.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (e.target.value !== "=") {
-      if (firstNumber !== undefined && secondNumber !== undefined) {
-        if (isEqualPressed === false) {
-          firstNumber = operate(firstNumber, theOperator, secondNumber);
+      if (firstNumber !== undefined) {
+        if (secondNumber !== undefined) {
+          if (isEqualPressed === false) {
+            firstNumber = operate(firstNumber, theOperator, secondNumber);
+          }
+          displayContent(firstNumber);
+          secondNumber = undefined;
         }
-        displayContent(firstNumber);
-        secondNumber = undefined;
+        theOperator = e.target.value;
+        displayOperator(theOperator);
       }
-      theOperator = e.target.value;
-      displayOperator(theOperator);
+
       isEqualPressed = false;
     } else {
       if (firstNumber !== undefined && secondNumber !== undefined) {
@@ -132,6 +135,28 @@ buttonFunction.forEach((button) => {
     }
     if (e.target.value === "Del") {
       backspace();
+    }
+    if (e.target.value === "%") {
+      if (firstNumber !== undefined && secondNumber === undefined) {
+        firstNumber = firstNumber / 100;
+        displayContent(firstNumber);
+      } else if (theOperator !== undefined && secondNumber !== undefined) {
+        secondNumber = secondNumber / 100;
+        displayContent(secondNumber);
+      }
+    }
+    if (e.target.value === "+/-") {
+      if (firstNumber !== undefined && secondNumber === undefined) {
+        firstNumber = firstNumber.includes("-")
+          ? firstNumber.slice(1)
+          : "-" + firstNumber;
+        displayContent(firstNumber);
+      } else if (theOperator !== undefined && secondNumber !== undefined) {
+        secondNumber = secondNumber.includes("-")
+          ? secondNumber.slice(1)
+          : "-" + secondNumber;
+        displayContent(secondNumber);
+      }
     }
   });
 });
