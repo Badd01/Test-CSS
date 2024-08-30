@@ -16,19 +16,16 @@
   display: flex;
   flex-direction: column;
 }
-
-.expression {
-  font-size: 32px;
-}
 .operator {
-  font-size: 24px;
-  text-align: end;
+  font-size: 40px;
+  text-align: center;
 }
 .content {
   text-align: end;
-  font-size: 64px;
   flex: 1;
+  font-size: 40px;
   align-content: end;
+  overflow-wrap: break-word;
 }
 .calculator {
   display: flex;
