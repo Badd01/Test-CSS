@@ -113,3 +113,9 @@ input:invalid {
   font-weight: 600;
   text-decoration: none;
 }
+.offset {
+  display: none;
+}
+.invalid {
+  color: red;
+}
