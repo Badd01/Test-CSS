@@ -47,14 +47,14 @@ a {
 /* main */
 nav {
   background-color: white;
-  padding: 1rem 3rem;
+  padding: 1rem 3rem 0rem 3rem;
   box-shadow: 7px 3px 5px rgba(0, 0, 0, 0.3);
   grid-column: 1 / 3;
 }
 .top-nav {
   display: flex;
   gap: 20rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .user > img {
@@ -118,7 +118,7 @@ input:focus {
 }
 .container {
   display: grid;
-  grid-template: 25vh 75vh / 55vw 25vw;
+  grid-template: 22vh 75vh / 55vw 25vw;
   background-color: whitesmoke;
 }
 .projects {
@@ -152,10 +152,26 @@ input:focus {
 .trending > div {
   background-color: white;
   box-shadow: 7px 3px 5px rgba(0, 0, 0, 0.3);
-  margin: 0px 20px 0px 0px;
+  margin: 0px 50px 0px 0px;
   padding: 20px;
   border-radius: 7px;
 }
 .announcements > div > div {
   border-bottom: 1px solid #e5e7eb;
+}
+.announcements > div > div > p {
+  font-size: 14px;
+}
+.trending > div > div > img {
+  width: 50px;
+}
+.trending > div > div {
+  display: flex;
+  gap: 25px;
+  padding: 5px 0px;
+  align-items: center;
+}
+.trending > div > div > div {
+  display: flex;
+  flex-direction: column;
 }
