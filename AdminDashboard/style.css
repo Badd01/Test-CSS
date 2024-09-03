@@ -49,6 +49,7 @@ nav {
   background-color: white;
   padding: 1rem 3rem;
   box-shadow: 7px 3px 5px rgba(0, 0, 0, 0.3);
+  grid-column: 1 / 3;
 }
 .top-nav {
   display: flex;
@@ -116,5 +117,45 @@ input:focus {
   gap: 2rem;
 }
 .container {
+  display: grid;
+  grid-template: 25vh 75vh / 55vw 25vw;
   background-color: whitesmoke;
+}
+.projects {
+  gap: 20px 20px;
+  display: grid;
+  margin: 1rem;
+  grid-template: repeat(3, 190px) / repeat(2, 500px);
+}
+.first > h3 {
+  margin: 20px;
+}
+.projects-item {
+  border-left: 7px solid orange;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.projects-item > div + div {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 1rem;
+  flex: 1;
+}
+/* second */
+.announcements > div,
+.trending > div {
+  background-color: white;
+  box-shadow: 7px 3px 5px rgba(0, 0, 0, 0.3);
+  margin: 0px 20px 0px 0px;
+  padding: 20px;
+  border-radius: 7px;
+}
+.announcements > div > div {
+  border-bottom: 1px solid #e5e7eb;
 }
