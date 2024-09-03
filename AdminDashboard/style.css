@@ -16,13 +16,20 @@ aside {
   padding: 1rem 3rem;
   background-color: #0284c7;
   color: white;
-}
-.dashboard {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 .nav-link {
   gap: 2rem;
+  display: flex;
+  line-height: 2.5;
+  align-items: center;
 }
 .dashboard > a {
   font-size: 32px;
@@ -64,8 +71,8 @@ nav {
   gap: 2rem;
 }
 .search-box > input {
-  width: 40vw;
-  height: 3vh;
+  width: 800px;
+  height: 35px;
   border-radius: 2rem;
   background-color: #e5e7eb;
   color: black;
