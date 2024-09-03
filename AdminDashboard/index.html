@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside>
+      <div class="dashboard nav-link">
+        <span class="iconify logo" data-icon="mdi-view-dashboard"></span>
+        <a href="#">Dashboard</a>
+      </div>
+      <div>
+        <div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-home"></span>
+            <a href="#">Home</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-account-details"></span>
+            <a href="#">Profile</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-message"></span>
+            <a href="#">Messages</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-history"></span>
+            <a href="#">History</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-note-multiple"></span>
+            <a href="#">Tasks</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-account-group"></span>
+            <a href="#">Communities</a>
+          </div>
+        </div>
+        <div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-cog"></span>
+            <a href="#">Settings</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-help-box"></span>
+            <a href="#">Support</a>
+          </div>
+          <div class="nav-link">
+            <span class="iconify" data-icon="mdi-marker-check"></span>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="container">
+      <nav>
+        <div class="top-nav">
+          <div class="search-box">
+            <span class="iconify" data-icon="mdi-magnify"></span>
+            <input type="text" name="search-box" id="search-box" />
+          </div>
+          <div class="user">
+            <span class="iconify" data-icon="mdi-bell-ring-outline"></span>
+            <img src="assets/avatar.png" alt="small-user-avatar" />
+            <h3>Admin</h3>
+          </div>
+        </div>
+        <div class="main-nav">
+          <div class="avatar">
+            <img src="assets/avatar.png" alt="main-user-avatar" />
+            <div>
+              <p><strong>Hi there,</strong></p>
+              <h2>Admin (@admin)</h2>
+            </div>
+          </div>
+          <div class="btn-nav">
+            <button>New</button>
+            <button>Upload</button>
+            <button>Share</button>
+          </div>
+        </div>
+      </nav>
+      <main></main>
+    </div>
+    <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
