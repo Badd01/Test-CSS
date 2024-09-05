@@ -1,0 +1,47 @@
+:root {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0px;
+}
+.checkbox {
+  margin: 5px 0px;
+}
+dialog {
+  background-color: skyblue;
+  color: black;
+  font-size: 1.5rem;
+  border-radius: 7px;
+}
+input[type="text"],
+input[type="number"] {
+  width: 20vw;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-size: 1.25rem;
+}
+
+button {
+  padding: 5px 15px;
+  border-radius: 7px;
+}
+#confirmBtn {
+  background-color: green;
+  color: white;
+  font-size: 1.25rem;
+}
+#closeBtn {
+  background-color: red;
+  color: white;
+  font-size: 1.25rem;
+}
+#newBook {
+  background-color: skyblue;
+  color: black;
+  font-size: 1.25rem;
+}
