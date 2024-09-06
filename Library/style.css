@@ -1,6 +1,7 @@
 :root {
   box-sizing: border-box;
   margin: 0;
+  font-size: 16px;
 }
 
 .item {
@@ -29,6 +30,10 @@ input[type="number"] {
 button {
   padding: 5px 15px;
   border-radius: 7px;
+  background-color: skyblue;
+  color: black;
+  font-size: 1.25rem;
+  margin: 3px;
 }
 #confirmBtn {
   background-color: green;
@@ -40,8 +45,16 @@ button {
   color: white;
   font-size: 1.25rem;
 }
-#newBook {
-  background-color: skyblue;
-  color: black;
+.book-card {
+  background-color: whitesmoke;
+  border-radius: 7px;
   font-size: 1.25rem;
+  padding-left: 25px;
+  border: 1px solid blue;
+}
+.container {
+  margin-top: 15px;
+  display: grid;
+  gap: 25px 25px;
+  grid-template: repeat(auto-fit, 250px) / repeat(auto-fit, 250px);
 }
