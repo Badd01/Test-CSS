@@ -89,3 +89,6 @@ confirmBtn.addEventListener("click", (e) => {
   dialog.close();
   bookForm.reset(); //Delete input form data
 });
+
+addBookToLibrary("Tester1", "Test1", 100, false);
+addBookToLibrary("Tester2", "Test2", 200, true);
